@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - JS Hands on 11</title>
+</head>
+<body>
+    <h1>Functions</h1><br>
+    <h2>Day 1</h2><br>
+    <p>Question 1 : Create one function with zero parameter having a console statement</p>
+    <p>Answer:</p>
+    <pre>function func(){
+  console.log("Hello World!");
+}
+func();</pre><br>
+    <p>Question 2 : Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</p>
+    <p>Answer:</p>
+    <pre>function sum(x,y){
+  let sum=x+y;
+  console.log(`Sum of ${x}, ${y} is ${sum}`);
+}
+sum(3,4);</pre><br>
+    <p>Question 3 : Create one arrow function</p>
+    <p>Answer:</p>
+    <pre>const sum = (x,y) =>{
+        let sum=x+y;
+        console.log(`Sum of ${x} , ${y} is ${sum}`);
+      }
+      sum(1,2);</pre><br>
+    <pre>Question 4 : Print output: 
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();</pre>
+    <p>Answer:</p>
+    <pre>undefined,because the console.log() statement is before the initialization var x=20;</pre><br>
+    <pre>Question 5 : Print output: 
+        var x = 21;
+        girl ();
+        console.log(x)
+        function girl() {
+            console.log(x);
+            var x = 20;
+        };</pre>
+    <pre>Answer:</pre>
+    <pre>undefined 
+21
+In the first line the girl(); function will print undefined because in the girl() function console.log() statement is before the initialization var x=20; and in the second line 21 will be printed as after the function call there is a console.log() statement which prints x whose value is var x=21;
+</pre><br>
+    <pre>Question 6 : Print output
+
+        var x = 21;
+        a();
+        b();
+        
+          function a() {
+            
+           x = 20;
+          console.log(x);
+        };
+         function b() {
+            
+            x = 40;
+           console.log(x);
+        };</p>
+    <p>Answer:</pre>
+    <pre>20
+40
+In the first line  20 is printed as the value of variable x in the function a() is 20 and in the second line 40 is printed as the value of variable x in function b() is 40
+</pre><br>
+    <p>Question 7 : Write a function that accepts parameter n and returns factorial of n</p>
+    <p>Answer:</p>
+    <pre>function factorial(n){
+        let fact = 1
+        for(i=1;i<=n;i++){
+          fact=fact*i;
+        }
+        console.log(fact);
+      }
+      factorial(4);</pre><br><br>
+      <h2>Day 2</h2>
+      <pre>Question 1 : Guess the Output
+
+        function FindSum(a, b){
+            return a + b;
+        }
+        
+        function DisplayData(data, batch){
+            console.log(`i am from ${data} and My batch is EA${batch}`)
+        }
+        
+        DisplayData("PrepBytes", FindSum(10, 9));</pre>
+      <p>Answer:</p>
+      <pre>i am from PrepBytes and My batch is EA19
+In this case the DisplayData function has two parameters data and batch and when the DisplayData function is called the first value is a string "PrepBytes" and the other is a function FindSum which will return sum of 2 values passed to the function ,therefore when we console.log() the data is a string and batch is the value returned from the FindSum() function
+      </pre><br>
+      <pre>Question 2 : Guess the output
+
+        Abc();
+        const Abc = function(){
+            let value = 20;
+            console.log(value);
+        }</pre>
+      <p>Answer:</p>
+      <pre>ReferenceError as the function cannot be accessed before initialization
+In this case the function Abc() is accessed before its initialization tgherefore it will give an referenceerror
+      </pre><br>
+      <pre>Question 3 : Guess the output
+
+        var a = 10;
+        (function (){
+            console.log(a);
+            var a = 20;
+        })();</pre>
+      <p>Answer:</p>
+      <pre>undefined,because the variable is printed before assigning any value to it</pre><br>
+      <pre>Question 4 : Guess the Output
+        const greet =  function(name){
+            return function(m){
+            
+                console.log(`Hi!! ${name}, ${m}`);
+            }
+        }
+          
+        const greet_message = greet('EA19');
+        greet_message(""Welcome To PrepBytes"")</pre>
+      <p>Answer:</p>
+      <pre>Hi!! EA19, Welcome To PrepBytes</pre><br>
+</body>
+</html>
